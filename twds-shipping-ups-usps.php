@@ -502,6 +502,7 @@ class WC_Shipping_Drop_Live extends WC_Shipping_Method
                     $drop_shipments[] =  $parcel;
 
                     $domestic = in_array($package['destination']['country'], $this->domestic) ? true : false;
+                    
                     if ($domestic) {
 
 

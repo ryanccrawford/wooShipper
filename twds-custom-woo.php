@@ -3,7 +3,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
 
     class TWDS_Custom_Woo {
 
-        function __construct() {
+        public function __construct() {
 
             add_action('woocommerce_product_options_general_product_data', array($this, 'twdstore_add_custom_general_fields'));
 
@@ -18,7 +18,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
             add_action('after_shipping_information_twdstore', array($this, 'twdstore_display_custom_data'));
         }
 
-        function twdstore_add_custom_inventory_fields() {
+        public function twdstore_add_custom_inventory_fields() {
 
             echo '<div class="options_group">';
 
@@ -38,7 +38,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
             echo '</div>';
         }
 
-        function twdstore_add_custom_general_fields() {
+        public function twdstore_add_custom_general_fields() {
 
             echo '<div class="options_group">';
 
@@ -83,9 +83,12 @@ if (!class_exists('TWDS_Custom_Woo')) {
                 (wc_get_product($post->ID)->get_stock_quantity() < 1 && wc_get_product($post->ID)->get_backorders() == 'yes') {
                 
                 $handling_time = ' Back Ordered';
+
             }elseif (wc_get_product($post->ID)->get_stock_quantity() < 1 && wc_get_product($post->ID)->get_backorders() == 'hide') {
+
                 $handling_time = '3 - 4 Days (Drop Shipped)';
-            }elseif ($handling_time == '24') {
+
+            }elseif ($handling_time === '24') {
             
                 echo ' - ';
 
@@ -93,7 +96,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
 
                 echo '</li>';
                 
-            }elseif ($handling_time == '48') {
+            }elseif ($handling_time === '48') {
 
 
                 echo ' - ';
@@ -103,7 +106,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
                 echo '</li>';
             }
 
-            elseif ($handling_time == '36') {
+            elseif ($handling_time === '36') {
 
                 echo ' - ';
 
@@ -113,7 +116,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
             }
 
 
-            elseif ($handling_time == '96') {
+            elseif ($handling_time === '96') {
 
 
                
@@ -134,7 +137,7 @@ if (!class_exists('TWDS_Custom_Woo')) {
                 echo 'Can Vary';
 
                 echo '</li>';
-            }elseif ($handling_time == 'Call to Order' || $handling_time = 'Back Ordered' || $handling_time = '3 - 4 Days (Drop Shipped)') {
+            }elseif ($handling_time === 'Call to Order' || $handling_time === 'Back Ordered' || $handling_time = '3 - 4 Days (Drop Shipped)') {
 
                 
 
@@ -156,19 +159,19 @@ if (!class_exists('TWDS_Custom_Woo')) {
             }
     
   
-            if ($condition == "New" || $condition == "new") {
+            if ($condition === "New" || $condition === "new") {
 
                 echo '<li class="fa fa-battery-full" aria-hidden="true">';
             }
 
-            if ($condition == "Used" || $condition == "used") {
+            if ($condition === "Used" || $condition === "used") {
 
 
                 echo '<li class="fa fa-battery-half" aria-hidden="true">';
 
             }
 
-            if ($condition == "Refurbished" || $condition == "refurbished") {
+            if ($condition === "Refurbished" || $condition === "refurbished") {
 
                 echo '<li class="fa fa-recycle" aria-hidden="true">';
             }
