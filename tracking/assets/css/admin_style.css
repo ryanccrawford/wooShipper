@@ -1,0 +1,62 @@
+.postbox h3.hndle {
+    cursor: default !important;
+    padding: 7px 10px !important;
+}
+
+.woopro_clear {
+    clear: both;
+}
+
+.providers_table .sht_title, .providers_table .sht_region {
+    width: 100% !important;
+}
+
+.providers_table .sht_url {
+    width: 50% !important;
+}
+
+.sht_remove_provider_row, .sht_add_provider_row, .sht_edit_provider_row {
+    float: right;
+    margin-left: 10px !important;
+}
+
+.settings_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height : 100%;
+    background-color: rgb(119, 119, 119);
+    opacity: 0.2;
+}
+
+.sht_general_settings textarea {
+    width: 100%;
+}
+
+.sht_general_settings .title {
+    width: 100%;
+    clear: both;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#woopro_logo_block {
+    /*background: transparent url( '../images/woopro_logo.png' ) left top no-repeat !important;*/
+    height: 40px;
+    width: 100%;
+    /*padding: 15px 0 0 160px;*/
+    /*float: left;*/
+}
+
+#woopro_logo_block h2 {
+    /*margin: 0;*/
+    width: 400px;
+}
+
+#woopro_logo_block a {
+    float: right;
+    margin-top: -15px;
+}
